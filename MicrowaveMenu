@@ -1,0 +1,78 @@
+/* Name: Geraldyn Cataluna                                       BSCS 1A
+ * 
+ * This code promt the user  for cook time in the format of minutes and seconds, providing different formatting based on the
+ * length of the input string. If the input contains only seconds, it prints them preceded by "00:". If the input includes both 
+ * minutes and seconds, it prints them with leading zeros for minutes and in the format "MM:SS". Additionally, it handles cases 
+ * where the input exceeds the expected length, signaling an error message to the user.
+ */
+ 
+import java.util.Scanner;
+
+public class MicrowaveMenu {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter cook time --> ");
+        String time = scanner.nextLine();
+        int tlength = time.length();
+        boolean hasLetter = false;
+        
+        
+        for(int i =  0; i < tlength; i++){
+            char input = time.charAt(i);
+            
+            if (Character.isLetter(input)){
+                hasLetter = true;
+                
+                if(hasLetter = true)
+                    System.out.println("Invalid input! input Only numbers!");
+                break;
+        }
+        
+        else if (time.length() > 0 && time.length() < 2) 
+        {
+            // If the time string has only seconds (length less than 3)(00 : SS)
+            String seconds = time.substring(0, 1);
+
+            // Printing the seconds substring with minutes as "00"
+            System.out.println("00:0" + seconds);
+            break;
+        } 
+        else if (time.length() > 0 && time.length() < 3) 
+        {
+            // If the time string has only seconds (length less than 3)(00 : SS)
+            String seconds = time.substring(0, 2);
+
+            // Printing the seconds substring with minutes as "00"
+            System.out.println("00:" + seconds);
+            break;
+        } 
+        else if (time.length() == 3) 
+        {
+            // If the time string has both minutes and seconds (length == 3) (0M : SS)
+            String minutes = time.substring(0, 1);
+            String seconds = time.substring(1, 3);
+    
+            // Printing the minutes and seconds substrings with leading zero for minutes
+            System.out.println("0" + minutes + ":" + seconds);
+            break;
+        } 
+        else if (time.length() == 4) 
+        {
+            // If the time string has both minutes and seconds (length == 4) (MM : SS)
+            String minutes = time.substring(0, 2);
+            String seconds = time.substring(2, 4);
+        
+            // Printing the minutes and seconds substrings
+            System.out.println(minutes + ":" + seconds);
+            break;
+        }
+        else // if the user exceed the limit of 4 as this time format if only for minutes and seconds not hour 
+            System.out.println("Invalid input! The time must have at most 4 characters.");
+        }
+        
+    }
+}
+
+//loop that if the input is not letters then it will continue 
+//a loop that detect letters
