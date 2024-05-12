@@ -1,0 +1,22 @@
+/* Name: Geraldyn Cataluna                                       BSCS This Java program prompts the user to enter a string, then prints each character of the string on a new line. It uses a loop to iterate through the characters of the input string and prints each character individually.
+*/
+import java.util.Scanner;
+
+public class LinePerChar {
+    public static void main(String[] args) {
+        // Create a Scanner object to read input from the console
+        Scanner scanner = new Scanner(System.in);
+        // Prompt the user to enter a string
+        System.out.println("Enter a string:");
+        // Read the string entered by the user
+        String input = scanner.nextLine();
+        // Print an empty line for formatting
+        System.out.println();
+
+        // Loop through each character in the input string
+        for (int i = 0; i < input.length(); i++) {
+            // Print each character on a new line
+            System.out.println(input.charAt(i));
+        }
+    }
+}
