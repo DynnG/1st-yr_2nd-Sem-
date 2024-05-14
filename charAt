@@ -1,12 +1,17 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This Java program prompts the user to enter a string. It then iterates through each character of the input string using a for loop and prints each character on a new line using the `charAt()` method.
+*/
 import java.util.Scanner;
 
-public class charAt{
+public class charAt {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a string:");
         String input = scanner.nextLine();
 
+        // Iterate through each character of the input string
         for (int i = 0; i < input.length(); i++) {
+            // Print each character on a new line
             System.out.println(input.charAt(i));
         }
     }
