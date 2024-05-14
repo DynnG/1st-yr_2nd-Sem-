@@ -25,9 +25,6 @@ public class UnluckyNumbers{
             else 
                 System.out.println(number + " is safe.");
         }
-        
-        // Close the Scanner
-        scanner.close();
     }
     // Method to check if a number is unlucky
     public static boolean isUnlucky(long n) {
