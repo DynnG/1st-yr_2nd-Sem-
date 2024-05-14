@@ -1,0 +1,46 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This program prompts the user to enter nonnegative integers and determines whether each number is odious or evil. It utilizes a while loop to repeatedly accept user input until a negative integer is entered. The program defines a method to check if a number is odious based on its binary representation.
+*/
+import java.util.Scanner;
+
+public class OdiousEvilChecker {
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter a nonnegative integer and check if it is odious or evil
+        while (true) {
+            System.out.print("Enter a nonnegative integer (enter a negative integer to exit): ");
+            int number = scanner.nextInt();
+            
+            // Exit the program if the user enters a negative integer
+            if (number < 0) {
+                System.out.println("Exiting...");
+                break;
+            }
+            
+            // Determine if the input number is odious or evil and print the result
+            if (isOdious(number)) 
+                System.out.println("\n" + number + " is odious.\n");
+            else 
+                System.out.println("\n" + number + " is evil.\n");
+        }        
+        // Close the Scanner
+        scanner.close();
+    }
+    
+    // Method to check if a number is odious
+    public static boolean isOdious(long n) {
+        // Initialize a variable to count the number of ones in the binary representation of the number
+        int countOnes = 0;
+        
+        // Calculate the number of ones by iterating through the binary representation of the number
+        while (n > 0) {
+            if (n % 2 == 1) 
+                countOnes++;
+            n /= 2;
+        }        
+        // Return true if the count of ones is odd (odious), false otherwise (evil)
+        return countOnes % 2 == 1;
+    }
+}
