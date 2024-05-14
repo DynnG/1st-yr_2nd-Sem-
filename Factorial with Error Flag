@@ -1,0 +1,42 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This Java program calculates and prints the factorial of a non-negative integer entered by the user. It continuously prompts the user to input an integer, calculates its factorial, and displays the result until a negative value is entered. If the input is negative or greater than 20, it prints an error message indicating that the factorial cannot be calculated for such values.
+*/
+import java.util.Scanner;
+public class FactorialWithErrorFlag {
+  
+  // Calculate num factorial
+  public static long factorial(int num) {
+    // Check if the input is invalid (negative or greater than 20)
+    if (num < 0 || num > 20) 
+      return -1L; // Return -1 for invalid input
+   
+    long result = 1;
+    // Calculate factorial
+    for (int i = 1; i <= num; i++) 
+      result *= i;
+    return result;
+  }
+  
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    long fact; 
+    int N;
+
+    // Prompt the user to enter a value and display factorial until a negative value is entered
+    System.out.println("To exit, enter a negative value");
+    System.out.print("Enter N: ");
+    N = scan.nextInt();
+
+    while (N >= 0) {
+      fact = factorial(N);
+      // Check if factorial calculation is valid
+      if (fact < 0) 
+        System.out.println("Factorial cannot be calculated for negative numbers or numbers greater than 20.");
+      else 
+        System.out.println("Factorial is " + fact);
+      
+      System.out.print("Enter N: ");
+      N = scan.nextInt();
+    }
+  }
+}
