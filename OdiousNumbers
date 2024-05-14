@@ -25,8 +25,6 @@ public class OdiousEvilChecker {
             else 
                 System.out.println("\n" + number + " is evil.\n");
         }        
-        // Close the Scanner
-        scanner.close();
     }
     
     // Method to check if a number is odious
