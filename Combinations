@@ -42,7 +42,5 @@ public class Combinations{
       System.out.println("\nError: Factorial cannot be calculated for N > 20 or negative values. Please enter N ≥ R ≥ 0");
     else 
       System.out.println("\nThe combination (NCR) is: " + result);
-    
-    scanner.close();
   }
 }
