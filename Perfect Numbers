@@ -1,0 +1,35 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This Java program allows users to find and display all perfect numbers less than a specified upper limit. Upon receiving user input for the upper limit, the program iterates through numbers up to the limit, checking each number to determine if it meets the criteria of being a perfect number. It utilizes a method called `isPerfect` to calculate the sum of proper divisors for each number and returns `true` if the sum equals the number itself, indicating a perfect number. The program then prints all identified perfect numbers to the console.
+*/
+import java.util.Scanner;
+
+public class PerfectNumbers{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter an upper limit
+        System.out.print("Enter the upper limit: ");
+        int upperLimit = scanner.nextInt();
+        
+        // Find and print all perfect numbers less than the upper limit
+        System.out.println("\nPerfect numbers less than " + upperLimit + ":");
+        for (int i = 1; i < upperLimit; i++) {
+            if (isPerfect(i)) 
+                System.out.println(i);
+        }
+    }
+    
+    // Method to check if a number is perfect
+    public static boolean isPerfect(int n) {
+        int sum = 0;
+        
+        // Iterate through possible proper divisors
+        for (int i = 1; i < n; i++) {
+            if (n % i == 0) 
+                sum += i; // Add divisor to sum
+        }
+        
+        // Return true if sum of proper divisors equals the number
+        return sum == n;
+    }
+}
