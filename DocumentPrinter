@@ -1,0 +1,33 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This Java program, named "DocumentPrinter" reads lines from a file named "Hello.java" and outputs only those lines that start with "//". It first attempts to open the file and creates a Scanner object to read its contents. Then, it iterates over each line in the file, trimming leading and trailing whitespace. If a line starts with "//" and has either no characters or only whitespace characters after "//", it prints the line. If the file is not found, it prints an error message indicating the file's absence.
+*/
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class DocumentPrinter {
+    public static void main(String[] args) {
+        try {
+            // Create a Scanner object to read from the file "Hello.java"
+            Scanner scanner = new Scanner(new File("Hello.java"));
+
+            // Read each line from the file
+            while (scanner.hasNextLine()) {
+                // Read the next line and remove leading and trailing whitespace
+                String line = scanner.nextLine();
+                line = line.trim();
+                
+                // Check if the line starts with "//" and has either no characters or only whitespace characters after "//"
+                if (line.startsWith("//") && (line.length() == 2 || Character.isWhitespace(line.charAt(2)))) 
+                    System.out.println(line);// Print the line if it meets the criteria
+            }
+
+            // Close the Scanner
+            scanner.close();
+        } 
+        catch (FileNotFoundException e){
+            System.out.println("File not found: " + e.getMessage());
+            // Print an error message if the file is not found
+        }
+    }
+}
