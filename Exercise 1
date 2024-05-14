@@ -1,0 +1,74 @@
+/* Name: Geraldyn Cataluna                                       BSCS 1A
+
+This program defines three classes, HelloObject, WassupObject, and YoObject, each designed to print a specific greeting multiple times. Each class has a constructor that initializes a greeting message and a method to print the greeting a specified number of times. In the HelloTester class, instances of these three classes are created with their respective greetings, and their methods are called to display the greetings.
+*/
+class HelloObject {
+    private String greeting1;
+
+    // Constructor for HelloObject
+    public HelloObject(String greeting1) {
+        this.greeting1 = greeting1; // Initialize greeting with the provided value
+    }
+
+    // Method definition to print the greeting multiple times
+    public void op1() {
+        // Loop to print the greeting 5 times, since hello has 5 characters
+        for (int i = 0; i < 5; i++) 
+            System.out.println(greeting1);
+    }
+}
+
+class WassupObject {
+    private String greeting2;
+
+    // Constructor for WassupObject
+    public WassupObject(String greeting2) {
+        this.greeting2 = greeting2; // Initialize greeting with the provided value
+    }
+
+    // Method definition to print the greeting multiple times
+    public void op2() {
+        // Loop to print the greeting 6 times, since wassup has 6 characters
+        for (int i = 0; i < 6; i++) 
+            System.out.println(greeting2);
+    }
+}
+
+class YoObject {
+    private String greeting3;
+
+    // Constructor for YoObject
+    public YoObject(String greeting3) {
+        this.greeting3 = greeting3; // Initialize greeting with the provided value
+    }
+
+    // Method definition to print the greeting multiple times
+    public void op3() {
+        // Loop to print the greeting 3 times, since yo! has 3 characters
+        for (int i = 0; i < 3; i++) 
+            System.out.println(greeting3);
+    }
+}
+
+// Main class to test HelloObject, WassupObject, and YoObject
+public class HelloTester {
+    public static void main(String[] args) {
+        // Create an instance of HelloObject with a specific greeting
+        HelloObject firstObject = new HelloObject("Hello");
+        
+        // Create an instance of WassupObject with a specific greeting
+        WassupObject secondObject = new WassupObject("Wassup");
+        
+        // Create an instance of YoObject with a specific greeting
+        YoObject thirdObject = new YoObject("Yo!");
+        
+        // Call the speak method to print the greetings
+        firstObject.op1();
+        System.out.println();
+        
+        secondObject.op2();
+        System.out.println();
+        
+        thirdObject.op3();
+    }
+}
