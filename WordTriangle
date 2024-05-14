@@ -1,0 +1,22 @@
+/* Name: Geraldyn Cataluna                                       BSCS 1A
+ */
+import java.util.Scanner;
+
+public class WordTriangle {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter a word --> ");
+        String input = scan.nextLine();
+        
+        int length = input.length();
+        int end = length;
+
+        for (int start = 0; start < length; start++, end--) {
+            // Print the increasing spaces
+            for (int space = 0; space < start; space++)
+                System.out.print(" ");
+            // Print the substring
+            System.out.println(input.substring(start, end)); 
+        }
+    }
+}
