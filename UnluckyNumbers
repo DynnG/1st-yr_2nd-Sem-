@@ -1,0 +1,45 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This program prompts the user to enter nonnegative integers and determines whether each number is unlucky or safe. An unlucky number is defined as a nonnegative integer whose decimal representation contains the digits 1 and 3 in sequence. The program utilizes a static method `isUnlucky` to check if a given number is unlucky, and iterates through the digits of the number to find the sequence "13". If the sequence is found, the number is considered unlucky, otherwise, it is deemed safe. The program continues to prompt the user for input until a negative integer is entered, at which point it terminates.
+*/
+import java.util.Scanner;
+
+public class UnluckyNumbers{
+    public static void main(String[] args) {
+        // Create a Scanner object for user input
+        Scanner scanner = new Scanner(System.in);
+        
+        // Prompt the user to enter a nonnegative integer and check if it is unlucky or safe
+        while (true) {
+            System.out.print("Enter a nonnegative integer (enter a negative integer to exit): ");
+            int number = scanner.nextInt();
+            
+            // Exit the program if the user enters a negative integer
+            if (number < 0) {
+                System.out.println("Exiting...");
+                break;
+            }
+            
+            // Determine if the input number is unlucky or safe and print the result
+            if (isUnlucky(number)) 
+                System.out.println(number + " is unlucky.");
+            else 
+                System.out.println(number + " is safe.");
+        }
+        
+        // Close the Scanner
+        scanner.close();
+    }
+    // Method to check if a number is unlucky
+    public static boolean isUnlucky(long n) {
+        // Convert the input number to a string
+        String numberString = Long.toString(n);
+        
+        // Iterate through the string to find the sequence "13"
+        for (int i = 0; i < numberString.length() - 1; i++) {
+            if (numberString.charAt(i) == '1' && numberString.charAt(i + 1) == '3') 
+                return true; // Sequence "13" found
+        }
+        // If the sequence "13" is not found, return false
+        return false; // No sequence "13" found
+    }
+}
