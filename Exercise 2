@@ -1,0 +1,35 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+
+This Java program defines a class HelloObject that stores two greeting messages: a morning greeting and an evening greeting. The class includes two methods, morningGreet() and eveningGreet(), which print the morning and evening greetings, respectively. In the HelloTester class, an instance of HelloObject is created with specific morning and evening greetings, and the methods are called to display these greetings.
+*/
+class HelloObject {
+    private String morningGreeting; // Instance variable for the morning greeting
+    private String eveningGreeting; // Instance variable for the evening greeting
+
+    // Constructor for HelloObject
+    public HelloObject(String morningGreeting, String eveningGreeting) {
+        this.morningGreeting = morningGreeting; // Initialize morning greeting with the provided value
+        this.eveningGreeting = eveningGreeting; // Initialize evening greeting with the provided value
+    }
+
+    // Method to print the morning greeting
+    public void morningGreet() {
+        System.out.println(morningGreeting);
+    }
+
+    // Method to print the evening greeting
+    public void eveningGreet() {
+        System.out.println(eveningGreeting);
+    }
+}
+
+public class HelloTester {
+    public static void main(String[] args) {
+        // Create an instance of HelloObject with specific morning and evening greetings
+        HelloObject anObject = new HelloObject("Good morning World!", "Good evening World!");
+
+        // Call the methods to print the greetings
+        anObject.morningGreet();
+        anObject.eveningGreet();
+    }
+}
