@@ -1,5 +1,5 @@
 /*Name: Geraldyn Cataluna                                       BSCS 1A
-This Java program, named "DocumentPrinter" reads lines from a file named "Hello.java" and outputs only those lines that start with "//". It first attempts to open the file and creates a Scanner object to read its contents. Then, it iterates over each line in the file, trimming leading and trailing whitespace. If a line starts with "//" and has either no characters or only whitespace characters after "//", it prints the line. If the file is not found, it prints an error message indicating the file's absence.
+This program, named "DocumentPrinter" reads lines from a file named "Hello.java" and outputs only those lines that start with "//". It first attempts to open the file and creates a Scanner object to read its contents. Then, it iterates over each line in the file, trimming leading and trailing whitespace. If a line starts with "//" and has either no characters or only whitespace characters after "//", it prints the line. If the file is not found, it prints an error message indicating the file's absence.
 */
 import java.util.Scanner;
 import java.io.File;
