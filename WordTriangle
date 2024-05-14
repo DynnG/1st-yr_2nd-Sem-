@@ -1,21 +1,25 @@
 /* Name: Geraldyn Cataluna                                       BSCS 1A
- */
+*  The Java program prompts the user to enter a word and then prints it in an inverted triangle pattern. 
+*  Each line of the output shortens the word by one character from the end and adds increasing spaces at the beginning. 
+*  This creates a visually decreasing triangle of the word with leading spaces.
+*/
 import java.util.Scanner;
 
 public class WordTriangle {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a word --> ");
-        String input = scan.nextLine();
+        String input = scan.nextLine();  
         
-        int length = input.length();
-        int end = length;
-
+        int length = input.length();  // Get the length of the input word
+        int end = length;  // Initialize the end index for substring
+        
+        // Loop to create each line of the inverted triangle
         for (int start = 0; start < length; start++, end--) {
-            // Print the increasing spaces
+            // Print the increasing spaces at the beginning of each line
             for (int space = 0; space < start; space++)
                 System.out.print(" ");
-            // Print the substring
+            // Print the substring of the word from start to end
             System.out.println(input.substring(start, end)); 
         }
     }
