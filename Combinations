@@ -1,0 +1,48 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+The program calculates the combination (NCR) for given values of N and R using factorials while handling errors for invalid inputs. It prompts the user to input the values of N and R, computes the combination, and displays the result. If the factorial computation fails due to invalid inputs (N > 20 or negative values), it displays an error message prompting the user to enter valid values
+*/
+import java.util.Scanner;
+
+public class Combinations{
+  
+  // Calculate factorial with error handling
+  public static long factorial(int num) {
+    if (num < 0 || num > 20) 
+      return -1L; // Return -1 for invalid input
+   
+    long result = 1;
+    for (int i = 1; i <= num; i++) 
+      result *= i;
+    return result;
+  }
+  
+  // Calculate combination using factorials
+  public static long combination(int N, int R) {
+    long numerator = factorial(N);
+    long denominator = factorial(R) * factorial(N - R);
+    
+    if (numerator == -1 || denominator == -1) 
+      return -1L; // Error if factorial computation fails
+    
+    return numerator / denominator;
+  }
+  
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    // Prompt user to enter values for N and R
+    System.out.print("Enter the value of N: ");
+    int N = scanner.nextInt();
+    System.out.print("Enter the value of R: ");
+    int R = scanner.nextInt();
+    
+    // Calculate and display the combination
+    long result = combination(N, R);
+    if (result == -1) 
+      System.out.println("\nError: Factorial cannot be calculated for N > 20 or negative values. Please enter N ≥ R ≥ 0");
+    else 
+      System.out.println("\nThe combination (NCR) is: " + result);
+    
+    scanner.close();
+  }
+}
