@@ -1,0 +1,31 @@
+/*Name: Geraldyn Cataluna                                       BSCS 1A
+This Java program defines a `HelloObject` class, which stores and prints a greeting message provided at initialization. The `HelloTester` class's `main` method prompts the user to enter a greeting, which is then passed to the `HelloObject` constructor. Finally, the `speak` method of `HelloObject` is called to display the entered greeting.
+*/
+import java.util.Scanner;
+
+class HelloObject {
+    private String greeting; // Instance variable to store the greeting
+
+    // Constructor to initialize the greeting
+    public HelloObject(String greeting) {
+        this.greeting = greeting; // Initialize greeting with provided value
+    }
+
+    // Method to print the greeting
+    public void speak() {
+        System.out.println(greeting); // Print the greeting
+    }
+}
+
+public class HelloTester {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.print("Enter Greeting: ");
+        String greeting = scan.nextLine(); // Get user input
+        
+        // Create an instance of HelloObject with the user-provided greeting
+        HelloObject anObject = new HelloObject(greeting);
+        // Call the speak method to print the greeting
+        anObject.speak();
+    }
+}
